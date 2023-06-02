@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SuperEllipse">
+        <attr name="setColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="PlusView">
+        <attr name="fillColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="DownArrow">
+        <attr name="fillColorArrow" format="color" />
+    </declare-styleable>
+
+    <attr name="fontBoldStyle" format="reference"/>
+
+    <attr name="colorStart" format="color"/>
+    <attr name="colorEnd" format="color"/>
+    <attr name="iconBottomNav" format="color"/>
+
+    <attr name="colorStartMain" format="color"/>
+    <attr name="colorEndMain" format="color"/>
+
+    <attr name="backgroundColor" format="color"/>
+
+    <attr name="recentlyBackgroundColor" format="color"/>
+
+</resources>
+

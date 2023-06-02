@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="start">Начать</string>
+    <string name="download_from_internal">Загрузить с телефона</string>
+    <string name="welcome_to">Добро пожаловать в</string>
+    <string name="information">Информация</string>
+    <string name="settings">Настройки</string>
+    <string name="recently_used">Недавно использованные</string>
+    <string name="language">Язык</string>
+    <string name="theme">Тема</string>
+    <string name="dark">Темная</string>
+    <string name="light">Светлая</string>
+    <string name="app_usage">Пользование приложением</string>
+    <string name="main_screen">Главный экран</string>
+    <string name="recently_des">Здесь сохраняются недавно использованные вами модели</string>
+    <string name="cat_describe">На главном экране есть 5 основных категорий:</string>
+    <string name="start_describe">После нажатия на кнопку начать выберите модель из подходящей категории, перемещаясь по вкладкам. для возврата вы можете использовать кнопку назад. После того, как вы выбрали модель, вы автоматически перейдете на экран размещения</string>
+    <string name="download_describe">После нажатия на кнопку откроется файловый менеджер, откуды вы можете выбрать нужный файл с расширением .glb</string>
+    <string name="info_des">Раздел для справки</string>
+    <string name="settings_des">В настройках вы можете управлять такими параметрами, как смена цветовой темы приложения и смена языка</string>
+    <string name="model_place">Размещение модели</string>
+    <string name="model_place_des">В окне размещения модели необходимо навести камеру на нужное место и нажать кнопку CREATE. Модель зафиксируется на данном месте. Чтобы вернуться к выбору моделей, нажмите кнопку назад на навигационной панели</string>
+    <font name="app_font_bold">@font/circularsp_cyrl_bold</font>
+    <font name="app_font_book">@font/circularsp_cyrl_book</font>
+</resources>

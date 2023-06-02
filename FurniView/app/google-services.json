@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "240193305767",
+    "firebase_url": "https://furniviewdb-default-rtdb.firebaseio.com",
+    "project_id": "furniviewdb",
+    "storage_bucket": "furniviewdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240193305767:android:3fe605bc26af3a5828ef82",
+        "android_client_info": {
+          "package_name": "com.arinteriors.FurniView"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240193305767-h2t82maor2obn44nb7phk2lhulp3ugst.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFEA3LWxuF8ILoavBeMbAc_-1xq1Aw6VA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240193305767-h2t82maor2obn44nb7phk2lhulp3ugst.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240193305767:android:b6dc033daf09da6e28ef82",
+        "android_client_info": {
+          "package_name": "com.arinteriors.furniviewtest4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240193305767-h2t82maor2obn44nb7phk2lhulp3ugst.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFEA3LWxuF8ILoavBeMbAc_-1xq1Aw6VA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240193305767-h2t82maor2obn44nb7phk2lhulp3ugst.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240193305767:android:5c72ffe2ceead43a28ef82",
+        "android_client_info": {
+          "package_name": "com.arinteriors.furniviewtest5"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240193305767-h2t82maor2obn44nb7phk2lhulp3ugst.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFEA3LWxuF8ILoavBeMbAc_-1xq1Aw6VA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240193305767-h2t82maor2obn44nb7phk2lhulp3ugst.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240193305767:android:ef5d9d99224f4f7d28ef82",
+        "android_client_info": {
+          "package_name": "com.example.furniviewtest1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240193305767-h2t82maor2obn44nb7phk2lhulp3ugst.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFEA3LWxuF8ILoavBeMbAc_-1xq1Aw6VA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240193305767-h2t82maor2obn44nb7phk2lhulp3ugst.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

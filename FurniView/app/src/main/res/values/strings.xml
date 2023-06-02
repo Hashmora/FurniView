@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">FurniView</string>
+    <string name="title_activity_scroll" translatable="false">ScrollActivity</string>
+    <string name="start">Start</string>
+    <string name="download_from_internal">Upload from Device</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="information">Information</string>
+    <string name="settings">Settings</string>
+    <string name="recently_used">Recently used</string>
+    <string name="language">Language</string>
+    <string name="theme">Theme</string>
+    <string name="dark">Dark</string>
+    <string name="light">Light</string>
+    <string name="app_usage">App Usage</string>
+    <string name="main_screen">Main Screen</string>
+    <string name="recently_des">Here store models which you used recently</string>
+    <string name="cat_describe">There are 5 main categories on the Main Screen:</string>
+    <string name="start_describe">After pressing the Start button choose the model from the suitable category, moving through the tabs. You can use the back button to go back. Once you have selected a model, you will automatically be taken to the placement screen</string>
+    <string name="download_describe">After clicking on the button, the file manager will open, from where you can select the desired file with the .glb extension</string>
+    <string name="info_des">Help section</string>
+    <string name="settings_des">In the settings you can manage options such as changing the color theme of the application and changing the language</string>
+    <string name="model_place">Model placement</string>
+    <string name="model_place_des">In the model placement window, point the camera at the desired location and press the CREATE button. The model will be fixed in this place. To return to the selection of models, click the back button on the navigation bar</string>
+    <font name="app_font_bold">@font/circularsp_bold</font>
+    <font name="app_font_book">@font/circularsp_book</font>
+</resources>
