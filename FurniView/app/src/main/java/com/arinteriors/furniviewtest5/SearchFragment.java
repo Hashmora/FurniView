@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -22,6 +23,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
+import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -69,6 +71,7 @@ public class SearchFragment extends Fragment {
     }
 
     private void addView(ImageView imageView) {
+        int rotation = requireActivity().getWindowManager().getDefaultDisplay().getRotation();
 
         float scale = getResources().getDisplayMetrics().density;
 
@@ -78,8 +81,12 @@ public class SearchFragment extends Fragment {
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(imageViewSize, imageViewSize);
         params.setMargins(imageViewMargin, imageViewMargin, imageViewMargin, imageViewMargin);
-
         int imageViewsPerRow = 2;
+
+        if ( rotation == Surface.ROTATION_90 || rotation == Surface.ROTATION_270) {
+            imageViewsPerRow = 4;
+        }
+
         if (lastRow == null || lastRow.getChildCount() >= imageViewsPerRow) {
             lastRow = new LinearLayout(rootView.getContext());
             lastRow.setGravity(Gravity.CENTER);
@@ -88,6 +95,8 @@ public class SearchFragment extends Fragment {
 
         lastRow.addView(imageView, params);
     }
+
+
 
 
     private String removeExtension(String fileName) {
@@ -119,7 +128,7 @@ public class SearchFragment extends Fragment {
         executorService.execute(() -> item.getDownloadUrl().addOnSuccessListener(uri -> {
             Picasso.get().load(uri).transform(
                     new RoundedCornersTransformation(
-                            (int) (10 * getResources().getDisplayMetrics().density),
+                            (int) (40 * getResources().getDisplayMetrics().density),
                             0, // Margin
                             RoundedCornersTransformation.CornerType.ALL // Corner type
                     )

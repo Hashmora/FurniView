@@ -23,7 +23,7 @@
 
     <ImageView
         android:id="@+id/rect"
-        android:layout_width="200dp"
+        android:layout_width="800dp"
         android:layout_height="70dp"
         android:background="?attr/backgroundColor"
         android:animation="@anim/anim"

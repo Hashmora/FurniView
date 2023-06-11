@@ -18,11 +18,11 @@
 
         <item name="iconBottomNav">#41AF90</item>
 
-        <item name="colorStart">#ddd6f3</item>
-        <item name="colorEnd">#faaca8</item>
+        <item name="colorStart">#000</item>
+        <item name="colorEnd">#000</item>
 
-        <item name="colorStartMain">#000</item>
-        <item name="colorEndMain">#000</item>
+        <item name="colorStartMain">#ddd6f3</item>
+        <item name="colorEndMain">#faaca8</item>
 
         <item name="backgroundColor">#000</item>
 

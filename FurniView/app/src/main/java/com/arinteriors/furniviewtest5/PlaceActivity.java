@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.google.ar.core.Anchor;
@@ -20,6 +21,8 @@ import com.google.ar.core.Session;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.ArSceneView;
 import com.google.ar.sceneform.SceneView;
+import com.google.ar.sceneform.math.Quaternion;
+import com.google.ar.sceneform.math.Vector3;
 import com.google.ar.sceneform.ux.HandMotionView;
 import com.google.ar.sceneform.Sceneform;
 import com.google.ar.sceneform.rendering.ModelRenderable;
@@ -48,6 +51,8 @@ public class PlaceActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_place);
         getSupportFragmentManager().addFragmentOnAttachListener(this);
 
+
+
         if (savedInstanceState == null) {
             if (Sceneform.isSupported(this)) {
                 getSupportFragmentManager().beginTransaction()
@@ -62,11 +67,6 @@ public class PlaceActivity extends AppCompatActivity implements
     public void onAttachFragment(@NonNull FragmentManager fragmentManager, @NonNull Fragment fragment) {
         if (fragment.getId() == R.id.arFragment) {
             arFragment = (ArFragment) fragment;
-            View arView = arFragment.getArSceneView();
-//            HandMotionView handMotionView = findViewById(com.google.ar.sceneform.ux.R.id.handMotionView);
-//            handMotionView.setVisibility(View.GONE);
-//            HandMotionView handMotionView = null;
-            Toast.makeText(this, "here", Toast.LENGTH_SHORT).show();
             arFragment.setOnSessionConfigurationListener(this);
             arFragment.setOnViewCreatedListener(this);
             arFragment.setOnTapArPlaneListener(this);
@@ -109,12 +109,13 @@ public class PlaceActivity extends AppCompatActivity implements
             return;
         }
 
-        // Create the Anchor.
+        // Create the Anchor
         Anchor anchor = hitResult.createAnchor();
         AnchorNode anchorNode = new AnchorNode(anchor);
         anchorNode.setParent(arFragment.getArSceneView().getScene());
 
-        // Create the transformable model and add it to the anchor.
+
+        // Create the transformable model and add it to the anchor
         TransformableNode model = new TransformableNode(arFragment.getTransformationSystem());
         model.setParent(anchorNode);
         model.setRenderable(this.model)

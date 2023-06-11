@@ -1,11 +1,13 @@
 package com.arinteriors.furniviewtest5;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -27,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
     private final String[] SAVED_KEYS = {"saved", "saved1", "saved2", "saved3"};
 
-    //changed
     @Override
     public void onBackPressed() {
 
@@ -50,9 +51,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Objects.requireNonNull(getSupportActionBar()).hide();
-        replaceFragment(new HomeFragment());
+
+        if (savedInstanceState == null) {
+            replaceFragment(new HomeFragment());
+        }
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.home);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.home:

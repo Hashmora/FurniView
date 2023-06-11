@@ -16,16 +16,16 @@
 
         <item name="fillColor">@color/black</item>
 
-        <item name="colorStart">#02aab0</item>
-        <item name="colorEnd">#00cdac</item>
-        <item name="iconBottomNav">#ffd89b</item>
+        <item name="colorStart">#ff6961</item>
+        <item name="colorEnd">#fff</item>
+        <item name="iconBottomNav">#CF8209</item>
 
         <item name="colorStartMain">#8778c7</item>
         <item name="colorEndMain">#abf8e7</item>
 
         <item name="backgroundColor">#ff6961</item>
 
-        <item name="recentlyBackgroundColor">#00000000</item>
+        <item name="recentlyBackgroundColor">#DADADA</item>
 
     </style>
 </resources>
