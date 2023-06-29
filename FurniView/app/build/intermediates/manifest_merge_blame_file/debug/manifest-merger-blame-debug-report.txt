@@ -1,0 +1,287 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.arinteriors.furniviewtest5"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+8-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml
+10
+11    <uses-feature
+11-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:5:5-7:36
+12        android:name="android.hardware.camera"
+12-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:6:9-47
+13        android:required="false" />
+13-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:7:9-33
+14
+15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+15-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:9:5-80
+15-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:9:22-77
+16    <uses-permission android:name="android.permission.CAMERA" />
+16-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:10:5-65
+16-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:10:22-62
+17
+18    <uses-feature
+18-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:12:5-14:35
+19        android:name="android.hardware.camera.ar"
+19-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:13:9-50
+20        android:required="true" />
+20-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:14:9-32
+21
+22    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+23    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+24    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+24-->[com.google.firebase:firebase-database:20.2.2] /Users/andrew/.gradle/caches/transforms-3/277f6d1b85e685d6ef039b75f300b190/transformed/firebase-database-20.2.2/AndroidManifest.xml:24:5-79
+24-->[com.google.firebase:firebase-database:20.2.2] /Users/andrew/.gradle/caches/transforms-3/277f6d1b85e685d6ef039b75f300b190/transformed/firebase-database-20.2.2/AndroidManifest.xml:24:22-76
+25    <uses-permission android:name="android.permission.INTERNET" />
+25-->[com.google.firebase:firebase-database:20.2.2] /Users/andrew/.gradle/caches/transforms-3/277f6d1b85e685d6ef039b75f300b190/transformed/firebase-database-20.2.2/AndroidManifest.xml:25:5-67
+25-->[com.google.firebase:firebase-database:20.2.2] /Users/andrew/.gradle/caches/transforms-3/277f6d1b85e685d6ef039b75f300b190/transformed/firebase-database-20.2.2/AndroidManifest.xml:25:22-64
+26
+27    <permission
+27-->[androidx.core:core:1.9.0] /Users/andrew/.gradle/caches/transforms-3/409c06ac2c56a258001c3591973cf142/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+28        android:name="com.arinteriors.furniviewtest5.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+28-->[androidx.core:core:1.9.0] /Users/andrew/.gradle/caches/transforms-3/409c06ac2c56a258001c3591973cf142/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+29        android:protectionLevel="signature" />
+29-->[androidx.core:core:1.9.0] /Users/andrew/.gradle/caches/transforms-3/409c06ac2c56a258001c3591973cf142/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+30
+31    <uses-permission android:name="com.arinteriors.furniviewtest5.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+31-->[androidx.core:core:1.9.0] /Users/andrew/.gradle/caches/transforms-3/409c06ac2c56a258001c3591973cf142/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+31-->[androidx.core:core:1.9.0] /Users/andrew/.gradle/caches/transforms-3/409c06ac2c56a258001c3591973cf142/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+32
+33    <queries>
+33-->[com.google.ar:core:1.31.0] /Users/andrew/.gradle/caches/transforms-3/2df5fda51a0f7161cb196421b09f91bc/transformed/core-1.31.0/AndroidManifest.xml:29:5-31:15
+34        <package android:name="com.google.ar.core" />
+34-->[com.google.ar:core:1.31.0] /Users/andrew/.gradle/caches/transforms-3/2df5fda51a0f7161cb196421b09f91bc/transformed/core-1.31.0/AndroidManifest.xml:30:9-54
+34-->[com.google.ar:core:1.31.0] /Users/andrew/.gradle/caches/transforms-3/2df5fda51a0f7161cb196421b09f91bc/transformed/core-1.31.0/AndroidManifest.xml:30:18-51
+35    </queries>
+36
+37    <application
+37-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:16:5-55:19
+38        android:allowBackup="true"
+38-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:17:9-35
+39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+39-->[androidx.core:core:1.9.0] /Users/andrew/.gradle/caches/transforms-3/409c06ac2c56a258001c3591973cf142/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+40        android:dataExtractionRules="@xml/data_extraction_rules"
+40-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:18:9-65
+41        android:debuggable="true"
+42        android:extractNativeLibs="false"
+43        android:fullBackupContent="@xml/backup_rules"
+43-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:19:9-54
+44        android:icon="@mipmap/app_icon"
+44-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:20:9-40
+45        android:label="@string/app_name"
+45-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:21:9-41
+46        android:supportsRtl="true"
+46-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:22:9-35
+47        android:testOnly="true"
+48        android:theme="@style/Theme.FurniViewTest5" >
+48-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:23:9-52
+49        <activity
+49-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:25:9-27:40
+50            android:name="com.arinteriors.furniviewtest5.AppPolicy"
+50-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:26:13-38
+51            android:exported="false" />
+51-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:27:13-37
+52        <activity
+52-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:28:9-32:50
+53            android:name="com.arinteriors.furniviewtest5.PlaceActivity"
+53-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:29:13-42
+54            android:configChanges="orientation|screenSize"
+54-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:30:13-59
+55            android:exported="true"
+55-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:31:13-36
+56            android:screenOrientation="locked" />
+56-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:32:13-47
+57        <activity
+57-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:33:9-41:20
+58            android:name="com.arinteriors.furniviewtest5.SplashScreen"
+58-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:34:13-41
+59            android:exported="true" >
+59-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:35:13-36
+60            <intent-filter>
+60-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:36:13-40:29
+61                <action android:name="android.intent.action.MAIN" />
+61-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:37:17-69
+61-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:37:25-66
+62
+63                <category android:name="android.intent.category.LAUNCHER" />
+63-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:39:17-77
+63-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:39:27-74
+64            </intent-filter>
+65        </activity>
+66        <activity
+66-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:42:9-44:40
+67            android:name="com.arinteriors.furniviewtest5.InformationActivity"
+67-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:43:13-48
+68            android:exported="false" />
+68-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:44:13-37
+69        <activity
+69-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:45:9-47:40
+70            android:name="com.arinteriors.furniviewtest5.SettingsActivity"
+70-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:46:13-45
+71            android:exported="false" />
+71-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:47:13-37
+72        <activity
+72-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:48:9-50:39
+73            android:name="com.arinteriors.furniviewtest5.MainActivity"
+73-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:49:13-41
+74            android:exported="true" />
+74-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:50:13-36
+75
+76        <meta-data
+76-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:52:9-54:40
+77            android:name="com.google.ar.core"
+77-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:53:13-46
+78            android:value="required" />
+78-->/Users/andrew/Documents/FurniView-main/FurniView/app/src/main/AndroidManifest.xml:54:13-37
+79
+80        <service
+80-->[com.google.firebase:firebase-database:20.2.2] /Users/andrew/.gradle/caches/transforms-3/277f6d1b85e685d6ef039b75f300b190/transformed/firebase-database-20.2.2/AndroidManifest.xml:28:9-34:19
+81            android:name="com.google.firebase.components.ComponentDiscoveryService"
+81-->[com.google.firebase:firebase-database:20.2.2] /Users/andrew/.gradle/caches/transforms-3/277f6d1b85e685d6ef039b75f300b190/transformed/firebase-database-20.2.2/AndroidManifest.xml:29:13-84
+82            android:directBootAware="true"
+82-->[com.google.firebase:firebase-common:20.3.2] /Users/andrew/.gradle/caches/transforms-3/f72a58fdf4aa0796282fcaf56dbefafc/transformed/firebase-common-20.3.2/AndroidManifest.xml:34:13-43
+83            android:exported="false" >
+83-->[com.google.firebase:firebase-database:20.2.2] /Users/andrew/.gradle/caches/transforms-3/277f6d1b85e685d6ef039b75f300b190/transformed/firebase-database-20.2.2/AndroidManifest.xml:30:13-37
+84            <meta-data
+84-->[com.google.firebase:firebase-database:20.2.2] /Users/andrew/.gradle/caches/transforms-3/277f6d1b85e685d6ef039b75f300b190/transformed/firebase-database-20.2.2/AndroidManifest.xml:31:13-33:85
+85                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+85-->[com.google.firebase:firebase-database:20.2.2] /Users/andrew/.gradle/caches/transforms-3/277f6d1b85e685d6ef039b75f300b190/transformed/firebase-database-20.2.2/AndroidManifest.xml:32:17-109
+86                android:value="com.google.firebase.components.ComponentRegistrar" />
+86-->[com.google.firebase:firebase-database:20.2.2] /Users/andrew/.gradle/caches/transforms-3/277f6d1b85e685d6ef039b75f300b190/transformed/firebase-database-20.2.2/AndroidManifest.xml:33:17-82
+87            <meta-data
+87-->[com.google.firebase:firebase-storage:20.2.1] /Users/andrew/.gradle/caches/transforms-3/4a461f1439e81bb082d74681980d27ea/transformed/firebase-storage-20.2.1/AndroidManifest.xml:32:13-34:85
+88                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+88-->[com.google.firebase:firebase-storage:20.2.1] /Users/andrew/.gradle/caches/transforms-3/4a461f1439e81bb082d74681980d27ea/transformed/firebase-storage-20.2.1/AndroidManifest.xml:33:17-107
+89                android:value="com.google.firebase.components.ComponentRegistrar" />
+89-->[com.google.firebase:firebase-storage:20.2.1] /Users/andrew/.gradle/caches/transforms-3/4a461f1439e81bb082d74681980d27ea/transformed/firebase-storage-20.2.1/AndroidManifest.xml:34:17-82
+90        </service>
+91
+92        <activity
+92-->[com.google.android.gms:play-services-base:18.1.0] /Users/andrew/.gradle/caches/transforms-3/ec4d49e14e65c716f6a924b53a50356d/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+93            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+93-->[com.google.android.gms:play-services-base:18.1.0] /Users/andrew/.gradle/caches/transforms-3/ec4d49e14e65c716f6a924b53a50356d/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+94            android:exported="false"
+94-->[com.google.android.gms:play-services-base:18.1.0] /Users/andrew/.gradle/caches/transforms-3/ec4d49e14e65c716f6a924b53a50356d/transformed/play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+95            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+95-->[com.google.android.gms:play-services-base:18.1.0] /Users/andrew/.gradle/caches/transforms-3/ec4d49e14e65c716f6a924b53a50356d/transformed/play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+96
+97        <provider
+97-->[com.google.firebase:firebase-common:20.3.2] /Users/andrew/.gradle/caches/transforms-3/f72a58fdf4aa0796282fcaf56dbefafc/transformed/firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
+98            android:name="com.google.firebase.provider.FirebaseInitProvider"
+98-->[com.google.firebase:firebase-common:20.3.2] /Users/andrew/.gradle/caches/transforms-3/f72a58fdf4aa0796282fcaf56dbefafc/transformed/firebase-common-20.3.2/AndroidManifest.xml:26:13-77
+99            android:authorities="com.arinteriors.furniviewtest5.firebaseinitprovider"
+99-->[com.google.firebase:firebase-common:20.3.2] /Users/andrew/.gradle/caches/transforms-3/f72a58fdf4aa0796282fcaf56dbefafc/transformed/firebase-common-20.3.2/AndroidManifest.xml:27:13-72
+100            android:directBootAware="true"
+100-->[com.google.firebase:firebase-common:20.3.2] /Users/andrew/.gradle/caches/transforms-3/f72a58fdf4aa0796282fcaf56dbefafc/transformed/firebase-common-20.3.2/AndroidManifest.xml:28:13-43
+101            android:exported="false"
+101-->[com.google.firebase:firebase-common:20.3.2] /Users/andrew/.gradle/caches/transforms-3/f72a58fdf4aa0796282fcaf56dbefafc/transformed/firebase-common-20.3.2/AndroidManifest.xml:29:13-37
+102            android:initOrder="100" />
+102-->[com.google.firebase:firebase-common:20.3.2] /Users/andrew/.gradle/caches/transforms-3/f72a58fdf4aa0796282fcaf56dbefafc/transformed/firebase-common-20.3.2/AndroidManifest.xml:30:13-36
+103
+104        <meta-data
+104-->[com.google.android.gms:play-services-basement:18.1.0] /Users/andrew/.gradle/caches/transforms-3/bcd6e3128d0937bd5ceee27ccd61b98b/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+105            android:name="com.google.android.gms.version"
+105-->[com.google.android.gms:play-services-basement:18.1.0] /Users/andrew/.gradle/caches/transforms-3/bcd6e3128d0937bd5ceee27ccd61b98b/transformed/play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+106            android:value="@integer/google_play_services_version" />
+106-->[com.google.android.gms:play-services-basement:18.1.0] /Users/andrew/.gradle/caches/transforms-3/bcd6e3128d0937bd5ceee27ccd61b98b/transformed/play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+107
+108        <provider
+108-->[androidx.emoji2:emoji2:1.2.0] /Users/andrew/.gradle/caches/transforms-3/079defd939b126218c559e525c76c2cf/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+109            android:name="androidx.startup.InitializationProvider"
+109-->[androidx.emoji2:emoji2:1.2.0] /Users/andrew/.gradle/caches/transforms-3/079defd939b126218c559e525c76c2cf/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+110            android:authorities="com.arinteriors.furniviewtest5.androidx-startup"
+110-->[androidx.emoji2:emoji2:1.2.0] /Users/andrew/.gradle/caches/transforms-3/079defd939b126218c559e525c76c2cf/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+111            android:exported="false" >
+111-->[androidx.emoji2:emoji2:1.2.0] /Users/andrew/.gradle/caches/transforms-3/079defd939b126218c559e525c76c2cf/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+112            <meta-data
+112-->[androidx.emoji2:emoji2:1.2.0] /Users/andrew/.gradle/caches/transforms-3/079defd939b126218c559e525c76c2cf/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+113                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+113-->[androidx.emoji2:emoji2:1.2.0] /Users/andrew/.gradle/caches/transforms-3/079defd939b126218c559e525c76c2cf/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+114                android:value="androidx.startup" />
+114-->[androidx.emoji2:emoji2:1.2.0] /Users/andrew/.gradle/caches/transforms-3/079defd939b126218c559e525c76c2cf/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+115            <meta-data
+115-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/andrew/.gradle/caches/transforms-3/8958638f3d0b26bd0881fc76ff1d70c1/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+116                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+116-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/andrew/.gradle/caches/transforms-3/8958638f3d0b26bd0881fc76ff1d70c1/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+117                android:value="androidx.startup" />
+117-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/andrew/.gradle/caches/transforms-3/8958638f3d0b26bd0881fc76ff1d70c1/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+118            <meta-data
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+119                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+119-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+120                android:value="androidx.startup" />
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+121        </provider>
+122        <provider
+122-->[com.squareup.picasso:picasso:2.71828] /Users/andrew/.gradle/caches/transforms-3/ec0b71fd34fa452e2df593a9d7a2470d/transformed/picasso-2.71828/AndroidManifest.xml:8:9-11:40
+123            android:name="com.squareup.picasso.PicassoProvider"
+123-->[com.squareup.picasso:picasso:2.71828] /Users/andrew/.gradle/caches/transforms-3/ec0b71fd34fa452e2df593a9d7a2470d/transformed/picasso-2.71828/AndroidManifest.xml:9:13-64
+124            android:authorities="com.arinteriors.furniviewtest5.com.squareup.picasso"
+124-->[com.squareup.picasso:picasso:2.71828] /Users/andrew/.gradle/caches/transforms-3/ec0b71fd34fa452e2df593a9d7a2470d/transformed/picasso-2.71828/AndroidManifest.xml:10:13-72
+125            android:exported="false" /> <!-- The minimal version code of ARCore APK required for an app using this SDK. -->
+125-->[com.squareup.picasso:picasso:2.71828] /Users/andrew/.gradle/caches/transforms-3/ec0b71fd34fa452e2df593a9d7a2470d/transformed/picasso-2.71828/AndroidManifest.xml:11:13-37
+126        <meta-data
+126-->[com.google.ar:core:1.31.0] /Users/andrew/.gradle/caches/transforms-3/2df5fda51a0f7161cb196421b09f91bc/transformed/core-1.31.0/AndroidManifest.xml:36:9-38:41
+127            android:name="com.google.ar.core.min_apk_version"
+127-->[com.google.ar:core:1.31.0] /Users/andrew/.gradle/caches/transforms-3/2df5fda51a0f7161cb196421b09f91bc/transformed/core-1.31.0/AndroidManifest.xml:37:13-62
+128            android:value="220920000" /> <!-- This activity is critical for installing ARCore when it is not already present. -->
+128-->[com.google.ar:core:1.31.0] /Users/andrew/.gradle/caches/transforms-3/2df5fda51a0f7161cb196421b09f91bc/transformed/core-1.31.0/AndroidManifest.xml:38:13-38
+129        <activity
+129-->[com.google.ar:core:1.31.0] /Users/andrew/.gradle/caches/transforms-3/2df5fda51a0f7161cb196421b09f91bc/transformed/core-1.31.0/AndroidManifest.xml:40:9-46:80
+130            android:name="com.google.ar.core.InstallActivity"
+130-->[com.google.ar:core:1.31.0] /Users/andrew/.gradle/caches/transforms-3/2df5fda51a0f7161cb196421b09f91bc/transformed/core-1.31.0/AndroidManifest.xml:41:13-62
+131            android:configChanges="keyboardHidden|orientation|screenSize"
+131-->[com.google.ar:core:1.31.0] /Users/andrew/.gradle/caches/transforms-3/2df5fda51a0f7161cb196421b09f91bc/transformed/core-1.31.0/AndroidManifest.xml:42:13-74
+132            android:excludeFromRecents="true"
+132-->[com.google.ar:core:1.31.0] /Users/andrew/.gradle/caches/transforms-3/2df5fda51a0f7161cb196421b09f91bc/transformed/core-1.31.0/AndroidManifest.xml:43:13-46
+133            android:exported="false"
+133-->[com.google.ar:core:1.31.0] /Users/andrew/.gradle/caches/transforms-3/2df5fda51a0f7161cb196421b09f91bc/transformed/core-1.31.0/AndroidManifest.xml:44:13-37
+134            android:launchMode="singleTop"
+134-->[com.google.ar:core:1.31.0] /Users/andrew/.gradle/caches/transforms-3/2df5fda51a0f7161cb196421b09f91bc/transformed/core-1.31.0/AndroidManifest.xml:45:13-43
+135            android:theme="@android:style/Theme.Material.Light.Dialog.Alert" />
+135-->[com.google.ar:core:1.31.0] /Users/andrew/.gradle/caches/transforms-3/2df5fda51a0f7161cb196421b09f91bc/transformed/core-1.31.0/AndroidManifest.xml:46:13-77
+136
+137        <receiver
+137-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+138            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+138-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+139            android:directBootAware="false"
+139-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+140            android:enabled="true"
+140-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+141            android:exported="true"
+141-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+142            android:permission="android.permission.DUMP" >
+142-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+143            <intent-filter>
+143-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+144                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+144-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+144-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+145            </intent-filter>
+146            <intent-filter>
+146-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+147                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+147-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+147-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+148            </intent-filter>
+149            <intent-filter>
+149-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+150                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+150-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+150-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+151            </intent-filter>
+152            <intent-filter>
+152-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+153                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+153-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+153-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/andrew/.gradle/caches/transforms-3/e4a25525a63d1e94936be693cf2f0c40/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+154            </intent-filter>
+155        </receiver>
+156    </application>
+157
+158</manifest>

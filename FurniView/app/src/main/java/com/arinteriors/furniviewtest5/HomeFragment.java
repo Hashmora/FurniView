@@ -3,12 +3,20 @@ package com.arinteriors.furniviewtest5;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.core.app.ActivityCompat;
@@ -16,6 +24,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -29,15 +38,34 @@ import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
+import java.util.Locale;
+
 public class HomeFragment extends Fragment {
     private LinearLayout linearLayout;
 
     private ActivityResultLauncher<Intent> fileChooserLauncher;
 
+    private boolean isPolicyAgreed = false;
+
+    private final String INTENT_KEY = "modelPath";
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        try {
+            String langKey = requireActivity()
+                    .getSharedPreferences("theme_and_lang", Context.MODE_PRIVATE)
+                    .getString("lang", "en");
+            Locale locale = new Locale(langKey);
+            Resources resources = getResources();
+            Configuration configuration = resources.getConfiguration();
+            configuration.setLocale(locale);
+            resources.updateConfiguration(configuration, resources.getDisplayMetrics());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         fileChooserLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -48,7 +76,7 @@ public class HomeFragment extends Fragment {
                             Uri uri = data.getData();
                             Intent intent = new Intent(requireContext(), PlaceActivity.class);
                             assert uri != null;
-                            intent.putExtra("modelPath", uri.toString());
+                            intent.putExtra(INTENT_KEY, uri.toString());
                             startActivity(intent);
                         }
                     } else {
@@ -58,6 +86,18 @@ public class HomeFragment extends Fragment {
                 }
         );
     }
+
+    private final ActivityResultLauncher<String> requestPermissionLauncher = registerForActivityResult(
+            new ActivityResultContracts.RequestPermission(),
+            result -> {
+                if (result) {
+                    showFileChooser();
+                    // PERMISSION GRANTED
+                } else {
+                    // PERMISSION NOT GRANTED
+                }
+            }
+    );
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -82,7 +122,7 @@ public class HomeFragment extends Fragment {
                 StorageReference modelRef = FirebaseStorage.getInstance().getReference().child(path);
                 modelRef.getDownloadUrl().addOnSuccessListener(uri -> {
                     Intent intent = new Intent(requireContext(), PlaceActivity.class);
-                    intent.putExtra("modelPath", uri.toString());
+                    intent.putExtra(INTENT_KEY, uri.toString());
                     startActivity(intent);
                 });
             });
@@ -92,20 +132,26 @@ public class HomeFragment extends Fragment {
 
         setUpTouchListener(R.id.constraintLayoutStart, rootView,
                 view -> mainActivity.setActiveElement(R.id.search));
-        setUpTouchListener(R.id.constraintLayoutDownload, rootView, view -> {
-            if (ContextCompat.checkSelfPermission(requireActivity(), READ_EXTERNAL_STORAGE)
-                    != PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(requireActivity(),
-                        new String[]{READ_EXTERNAL_STORAGE}, 1);
-            } else {
-                showFileChooser();
+
+        setUpTouchListener(R.id.constraintLayoutDownload, rootView,
+                view -> {
+            try {
+                SharedPreferences sharedPreferences = requireActivity()
+                        .getSharedPreferences("policy", Context.MODE_PRIVATE);
+                isPolicyAgreed = sharedPreferences.getBoolean("policy", false);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+            if (isPolicyAgreed) {requestPermissionLauncher.launch(READ_EXTERNAL_STORAGE);}
+            else showConfirmationDialog();
         });
+
+
 
         setUpTouchListener(R.id.infoLayout, rootView, v -> startActivity(
                 new Intent(requireContext(), InformationActivity.class)));
         setUpTouchListener(R.id.settingsLayout, rootView, v -> startActivity(
-                new Intent(requireContext(), SettingsActivity.class)));
+            new Intent(requireContext(), SettingsActivity.class)));
 
         return rootView;
     }
@@ -116,6 +162,49 @@ public class HomeFragment extends Fragment {
             return fileName.substring(0, lastDotIndex);
         } else {
             return fileName;
+        }
+    }
+
+    private void showConfirmationDialog() {
+        try {
+            SharedPreferences sharedPreferences = requireActivity()
+                    .getSharedPreferences("policy", Context.MODE_PRIVATE);
+            isPolicyAgreed = sharedPreferences.getBoolean("policy", false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if (!isPolicyAgreed) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+            builder.setTitle(getResources().getString(R.string.confirmation));
+            builder.setMessage(getResources().getString(R.string.conf_des));
+
+            builder.setPositiveButton(getResources().getString(R.string.ok), (dialog, which) -> {
+                try {
+                    SharedPreferences sharedPreferences = requireActivity()
+                            .getSharedPreferences("policy", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("policy", true);
+                    editor.apply();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                requestPermissionLauncher.launch(READ_EXTERNAL_STORAGE);
+            });
+
+            // Обработчик кнопки Cancel
+            builder.setNegativeButton(getResources().getString(R.string.cancel), (dialog, which) -> {
+                dialog.dismiss();
+            });
+
+            builder.setNeutralButton(getResources().getString(R.string.usage_policy), (dialog, which) -> {
+                startActivity(new Intent(requireActivity(), AppPolicy.class));
+            });
+
+
+            // Создаем и отображаем всплывающее окно
+            AlertDialog dialog = builder.create();
+            dialog.show();
         }
     }
 

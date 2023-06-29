@@ -23,7 +23,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -42,6 +41,8 @@ public class SearchFragment extends Fragment {
     private LinearLayout lastRow;
 
     StorageReference iconsRef;
+
+    private final String INTENT_KEY = "modelPath";
 
     public SearchFragment() {}
 
@@ -149,9 +150,9 @@ public class SearchFragment extends Fragment {
     private void handleModelClick(StorageReference item) {
         String path = "/Models/" + removeExtension(item.getName()) + ".glb";
         StorageReference modelRef = FirebaseStorage.getInstance().getReference().child(path);
-        executorService.execute(() -> modelRef.getDownloadUrl().addOnSuccessListener(uri -> {
-            launchModelActivity(uri, item);
-        }).addOnFailureListener(exception -> {
+        executorService.execute(() -> modelRef.getDownloadUrl().addOnSuccessListener(uri ->
+                launchModelActivity(uri, item))
+                .addOnFailureListener(exception -> {
             // Handle error
         }));
     }
@@ -172,7 +173,7 @@ public class SearchFragment extends Fragment {
 
     private void launchModelActivity(Uri uri, StorageReference item) {
         Intent intent = new Intent(rootView.getContext(), PlaceActivity.class);
-        intent.putExtra("modelPath", uri.toString());
+        intent.putExtra(INTENT_KEY, uri.toString());
         Activity parentActivity = getActivity();
         if (parentActivity instanceof MainActivity) {
             MainActivity mainActivity = (MainActivity) parentActivity;

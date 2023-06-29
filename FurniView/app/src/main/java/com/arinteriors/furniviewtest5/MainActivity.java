@@ -2,12 +2,16 @@ package com.arinteriors.furniviewtest5;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -16,6 +20,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 
@@ -26,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean isListOfImages = false;
 
     private SharedPreferences sharedPreferences;
+
+    private final String SHARED_DIRECTORY = "MyPref";
 
     private final String[] SAVED_KEYS = {"saved", "saved1", "saved2", "saved3"};
 
@@ -57,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
-        bottomNavigationView.setSelectedItemId(R.id.home);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.home:
@@ -69,14 +75,19 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
+        bottomNavigationView.setSelectedItemId(R.id.home);
 
-        sharedPreferences = getSharedPreferences("MyPref", MODE_PRIVATE);
+        replaceFragment(new HomeFragment());
+        sharedPreferences = getSharedPreferences(SHARED_DIRECTORY, MODE_PRIVATE);
         loadImage();
+
     }
 
     @Override
     protected void onDestroy() {
         saveImage();
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        fragmentManager.
         super.onDestroy();
     }
 

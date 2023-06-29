@@ -43,6 +43,14 @@ public class PlaceActivity extends AppCompatActivity implements
     private ArFragment arFragment;
     private Renderable model;
 
+    private int modelCount = 0;
+
+    private final String UNABLE_TO_LOAD = "Unable to load model";
+
+    private final String NOT_LOADED_YET = "Model not loaded yet";
+
+    private final String INTENT_KEY = "modelPath";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,15 +97,19 @@ public class PlaceActivity extends AppCompatActivity implements
     }
 
     public void loadModels() {
+
         ModelRenderable.builder()
-                .setSource(this, Uri.parse(getIntent().getStringExtra("modelPath")))
+                .setSource(this, Uri.parse(getIntent().getStringExtra(INTENT_KEY)))
                 .setIsFilamentGltf(true)
                 .setAsyncLoadEnabled(true)
                 .build()
-                .thenAccept(model -> this.model = model)
+                .thenAccept(model -> {
+                            this.model = model;
+                        }
+                )
                 .exceptionally(throwable -> {
                     Toast.makeText(
-                            this, "Unable to load model", Toast.LENGTH_LONG).show();
+                            this, UNABLE_TO_LOAD, Toast.LENGTH_LONG).show();
                     return null;
                 });
     }
@@ -105,21 +117,29 @@ public class PlaceActivity extends AppCompatActivity implements
     @Override
     public void onTapPlane(HitResult hitResult, Plane plane, MotionEvent motionEvent) {
         if (model == null) {
-            Toast.makeText(this, "Model not loaded yet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, NOT_LOADED_YET, Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Create the Anchor
-        Anchor anchor = hitResult.createAnchor();
-        AnchorNode anchorNode = new AnchorNode(anchor);
-        anchorNode.setParent(arFragment.getArSceneView().getScene());
+        if (modelCount > 4)
+            Toast.makeText(this, "model limit exceeded", Toast.LENGTH_SHORT).show();
+        else {
+            modelCount++;
 
+            // Create the Anchor
+            Anchor anchor = hitResult.createAnchor();
+            AnchorNode anchorNode = new AnchorNode(anchor);
+            anchorNode.setParent(arFragment.getArSceneView().getScene());
 
-        // Create the transformable model and add it to the anchor
-        TransformableNode model = new TransformableNode(arFragment.getTransformationSystem());
-        model.setParent(anchorNode);
-        model.setRenderable(this.model)
-                .animate(true).start();
-        model.select();
+            // Create the transformable model and add it to the anchor
+            TransformableNode model = new TransformableNode(arFragment.getTransformationSystem());
+            model.setParent(anchorNode);
+            model.setRenderable(this.model).animate(false).start();
+            model.select();
+            model.getScaleController().setMinScale(0.01f);
+            model.getScaleController().setMaxScale(10f);
+            model.getScaleController().setSensitivity(0.03f);
+        }
     }
+
 }

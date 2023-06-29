@@ -12,6 +12,13 @@
     <string name="theme">Theme</string>
     <string name="dark">Dark</string>
     <string name="light">Light</string>
+    <string name="system">System</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="conf_des">By using this feature, you agree to the application use policy</string>
+    <string name="usage_policy">Usage Policy</string>
+    <string name="policy_des">When using our application, users are not allowed to upload or distribute content that violates the copyrights of others. This includes models that are prohibited from being used in other applications or that require special permission from the copyright holder. The user undertakes not to upload or distribute such content and is solely responsible for the content he uploads.</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
     <string name="app_usage">App Usage</string>
     <string name="main_screen">Main Screen</string>
     <string name="recently_des">Here store models which you used recently</string>

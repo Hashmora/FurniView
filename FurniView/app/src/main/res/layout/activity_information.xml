@@ -13,6 +13,7 @@
         android:fontFamily="@font/app_font_bold"
         android:text="@string/information"
         android:layout_marginTop="30dp"
+        android:padding="13dp"
         android:textSize="30sp"
         android:layout_gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,6 +48,7 @@
                 android:textSize="15sp"
                 android:layout_margin="20dp"
                 android:text="@string/cat_describe"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -137,15 +139,6 @@
                 android:layout_margin="20dp"
                 android:layout_gravity="center"
                 android:text="Created by Andrew Brusov"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_gravity="center"
-                android:text="Copyright 2018. None rights reserved"/>
-
-
-
 
         </LinearLayout>
     </ScrollView>

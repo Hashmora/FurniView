@@ -8,5 +8,6 @@
     <string-array name="themes">
         <item>@string/dark</item>
         <item>@string/light</item>
+        <item>@string/system</item>
     </string-array>
 </resources>
